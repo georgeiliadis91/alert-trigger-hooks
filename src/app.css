@@ -1,0 +1,11 @@
+.main-wrapper {
+  margin: 0;
+  padding: 20px 400px 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+}

@@ -7,6 +7,7 @@ import {
   useTriggerSuccess,
   useTriggerWarning,
 } from "./redux/alert/hooks";
+import "./app.css";
 
 function App() {
   const errorAlert = useTriggerError();
@@ -15,26 +16,28 @@ function App() {
   const infoAlert = useTriggerInfo();
 
   return (
-    <div>
-      <Button colorScheme="blue" onClick={() => infoAlert("Info Message")}>
-        Info
-      </Button>
-      <Button colorScheme="red" onClick={() => errorAlert("Error Alert")}>
-        Error
-      </Button>
-      <Button
-        colorScheme="yellow"
-        onClick={() => warningAlert("Warning Message")}
-      >
-        Warning
-      </Button>
-      <Button
-        colorScheme="green"
-        onClick={() => successAlert("Success Message")}
-      >
-        Success
-      </Button>
+    <div className="main-wrapper">
       <AlertComponent />
+      <div className="button-container">
+        <Button colorScheme="blue" onClick={() => infoAlert("Info Message")}>
+          Info
+        </Button>
+        <Button colorScheme="red" onClick={() => errorAlert("Error Alert")}>
+          Error
+        </Button>
+        <Button
+          colorScheme="yellow"
+          onClick={() => warningAlert("Warning Message")}
+        >
+          Warning
+        </Button>
+        <Button
+          colorScheme="green"
+          onClick={() => successAlert("Success Message")}
+        >
+          Success
+        </Button>
+      </div>
     </div>
   );
 }
