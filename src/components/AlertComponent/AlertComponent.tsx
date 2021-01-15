@@ -6,9 +6,8 @@ import { useTriggerClose } from "../../redux/alert/hooks";
 import { AppState } from "../../redux/reducers";
 
 export default function AlertComponent() {
-  const closeAlert = useTriggerClose();
-
   const { open, type, message } = useSelector((state: AppState) => state.alert);
+  const closeAlert = useTriggerClose();
 
   const severityType = () => {
     switch (type) {
@@ -27,7 +26,6 @@ export default function AlertComponent() {
 
   return (
     <div>
-      {/* Checking the message in case of empty */}
       {open && (
         <Alert status={severityType()}>
           {message}
